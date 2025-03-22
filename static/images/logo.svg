@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .logo-text {
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            font-size: 60px;
+            letter-spacing: 4px;
+        }
+        .logo-fill {
+            fill: black;
+        }
+        .logo-stroke {
+            stroke: black;
+            stroke-width: 1;
+        }
+    </style>
+    
+    <!-- Main text -->
+    <text x="150" y="50" text-anchor="middle" class="logo-text logo-fill">
+        ZAK'S
+    </text>
+    
+    <!-- Split line effects -->
+    <path d="M60,30 L90,30" class="logo-stroke"/>
+    <path d="M120,30 L150,30" class="logo-stroke"/>
+    <path d="M180,30 L210,30" class="logo-stroke"/>
+    <path d="M240,30 L270,30" class="logo-stroke"/>
+    
+    <!-- Decorative elements -->
+    <path d="M40,20 L280,20" class="logo-stroke" stroke-opacity="0.5"/>
+    <path d="M40,60 L280,60" class="logo-stroke" stroke-opacity="0.5"/>
+</svg> 

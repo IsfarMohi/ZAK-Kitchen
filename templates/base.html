@@ -11,7 +11,11 @@
 
 <!-- Navigation Bar -->
 <header>
-    <div class="logo">Zak's Kitchen</div>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Zak's Kitchen" class="logo-img">
+        <!-- <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Zak's Kitchen" class="logo-img"> -->
+
+    </div>
     <nav>
         <ul class="nav-links">
             <li><a href="{{ url_for('home') }}">Home</a></li>

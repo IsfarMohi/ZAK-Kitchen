@@ -1,12 +1,28 @@
 body {
-    background-color: black;
-    color: gold;
-    font-family: Arial, sans-serif;
+    background-color: rgb(232, 165, 32);
+    background-image: url('../images/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(249, 249, 244);
+    font-family: Brixton;
     text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-bottom: 100px; /* Space for footer */
 }
 
 nav a {
-    color: gold;
+    color: rgb(5, 5, 5);
     margin: 10px;
     text-decoration: none;
 }
@@ -19,6 +35,11 @@ button {
     cursor: pointer;
 }
 .menu {
+    background-image: url('../images/bg1.jpg');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
     padding: 50px;
 }
@@ -93,7 +114,7 @@ form {
 }
 
 form label {
-    color: gold;
+    color: rgb(255, 255, 255);
     font-size: 1.2em;
     margin-top: 10px;
 }
@@ -144,8 +165,8 @@ form button:hover {
 
 .about-text h1 {
     font-size: 2.5em;
-    color: gold;
-    margin-bottom: 20px;
+    color: rgb(15, 15, 15);
+    margin-bottom: 200px;
 }
 
 .about-text p {
@@ -184,7 +205,7 @@ form button:hover {
 }
 
 .gallery-container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     justify-content: center;
@@ -243,75 +264,109 @@ form button:hover {
     cursor: pointer;
 }
 
+/* Contact Page Styles */
 .contact {
-    text-align: center;
-    padding: 50px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact h1 {
-    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 2rem;
     color: gold;
-    margin-bottom: 20px;
 }
 
 .contact-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contact-info, .contact-form {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 2rem;
+    border-radius: 20px;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    max-width: 400px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-info h2, .contact-form h2 {
     color: gold;
+    margin-bottom: 1.5rem;
 }
 
-.contact-info p, .contact-form input, .contact-form textarea {
+.contact-info p {
     color: white;
     font-size: 1.1em;
+    margin: 0.5rem 0;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
+    padding: 0.8rem;
+    border: 1px solid gold;
     border-radius: 5px;
-    background: #222;
+    background: rgba(0, 0, 0, 0.5);
     color: white;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    flex: 1;
+    resize: none;
 }
 
 .contact-form button {
-    width: 100%;
-    padding: 10px;
     background: gold;
-    border: none;
     color: black;
-    font-size: 1.1em;
-    cursor: pointer;
+    padding: 1rem;
+    border: none;
     border-radius: 5px;
-    transition: 0.3s;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    margin-top: auto;
 }
 
 .contact-form button:hover {
     background: #d4af37;
+    transform: translateY(-2px);
 }
 
 .map {
-    margin-top: 30px;
+    margin-top: 2rem;
+}
+
+.map h2 {
+    color: gold;
+    margin-bottom: 1rem;
 }
 
 .map iframe {
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info, .contact-form {
+        min-height: 350px;
+    }
 }
 
 /* Navigation Bar */
@@ -319,18 +374,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
+    background: rgba(260, 187, 0, 0.8);
     padding: 20px;
-    box-shadow: 0 0 10px gold;
+    box-shadow: 0 0 10px rgba(255, 180, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 1.8em;
-    color: gold;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -344,21 +409,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 1.2em;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: gold;
+    color: white;
 }
 
 /* Mobile Navigation */
 .menu-icon {
     display: none;
     font-size: 2em;
-    color: gold;
+    color: black;
     cursor: pointer;
     user-select: none;
 }
@@ -367,10 +432,15 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background: black;
+    background: rgb(159, 158, 156, 0.9);
     color: gold;
-    margin-top: 50px;
-    box-shadow: 0 -5px 10px rgba(255, 215, 0, 0.3);
+    width: 100%;
+    box-shadow: 0 -5px 10px rgba(36, 36, 35, 0.3);
+    z-index: 1000;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .social-icons {
@@ -463,4 +533,23 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    color: rgba(260, 195, 0);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
 }

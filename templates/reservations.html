@@ -3,7 +3,7 @@
 {% block content %}
 <section class="reservation fade-in">
     <h1>Book a Table</h1>
-    <form action="{{ url_for('reservations') }}" method="POST">
+    <form action="{{ url_for('make_reservation') }}" method="POST">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
 
