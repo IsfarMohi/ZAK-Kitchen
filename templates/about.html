@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="about fade-in">
+    <div class="about-container">
+        <div class="about-text">
+            <h1>About Zak's Kitchen</h1>
+            <p>At Zak's Kitchen, we blend the art of fine dining with an exquisite ambiance. 
+               Our chefs create dishes that tantalize your taste buds with the finest ingredients, 
+               bringing Michelin-star quality to every plate.</p>
+            <p>Indulge in a dining experience like no other, where every meal tells a story.</p>
+        </div>
+        <div class="about-image fade-in">
+            <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="Restaurant Interior">
+        </div>
+    </div>
+</section>
+{% endblock %}

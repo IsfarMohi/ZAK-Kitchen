@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zak's Kitchen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <div class="logo">Zak's Kitchen</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('menu') }}">Menu</a></li>
+            <li><a href="{{ url_for('make_reservation') }}">Reservations</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- Main Content -->
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 Zak's Kitchen | All Rights Reserved</p>
+    <div class="social-icons">
+        <a href="#"><img src="{{ url_for('static', filename='icons/facebook.png') }}" alt="Facebook"></a>
+        <a href="#"><img src="{{ url_for('static', filename='icons/instagram.png') }}" alt="Instagram"></a>
+        <a href="#"><img src="{{ url_for('static', filename='icons/twitter.png') }}" alt="Twitter"></a>
+    </div>
+</footer>
+
+</body>
+</html>
