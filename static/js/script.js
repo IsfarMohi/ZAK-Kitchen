@@ -49,7 +49,60 @@ if (contactForm) {
     });
 }
 
+// Slideshow functionality
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
+const dots = document.getElementsByClassName("dot");
+let slideTimer;
+
+function showSlides() {
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+    
+    // Move to next slide
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    
+    // Show current slide
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+    
+    // Change slide every 5 seconds
+    clearTimeout(slideTimer);
+    slideTimer = setTimeout(showSlides, 5000);
+}
+
+function changeSlide(n) {
+    clearTimeout(slideTimer);
+    slideIndex += n - 1;
+    
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    } else if (slideIndex < 1) {
+        slideIndex = slides.length;
+    }
+    
+    showSlides();
+}
+
+function currentSlide(n) {
+    clearTimeout(slideTimer);
+    slideIndex = n - 1;
+    showSlides();
+}
+
+// Start slideshow when page loads
+if (document.getElementsByClassName("slideshow-container").length > 0) {
+    showSlides();
+}
+
 // Mobile Navigation Toggle
 function toggleMenu() {
-    document.querySelector(".nav-links")?.classList.toggle("show");
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
 }

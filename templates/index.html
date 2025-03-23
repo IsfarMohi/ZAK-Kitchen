@@ -1,8 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero fade-in">
-    <h1>Welcome to Zak's Kitchen</h1>
-    <button><a href="{{ url_for('make_reservation') }}" class="cta-button">Book a Table</a></button>
-</section>
+<div class="slideshow-container fade-in">
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/butter chicken.jpg') }}" alt="Slide 1">
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/bg5.jpg') }}" alt="Slide 2">
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/spices.jpg') }}" alt="Slide 3">
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/falalfel.jpg') }}" alt="Slide 4">
+    </div>
+    <div class="slide fade">
+        <img src="{{ url_for('static', filename='images/nihari.jpeg') }}" alt="Slide 5">
+    </div>
+    
+    <!-- Hero Section Overlay -->
+    <div class="hero-overlay">
+        <h1>Welcome to Zak's Kitchen</h1>
+        <button><a href="{{ url_for('make_reservation') }}" class="cta-button">Book a Table</a></button>
+    </div>
+    
+    <!-- Arrow Navigation -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    
+    <!-- Navigation dots -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+</div>
 {% endblock %}
