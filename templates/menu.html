@@ -2,86 +2,141 @@
 
 {% block content %}
 <section class="menu fade-in">
-    <div class="menu-container">
-        <div class="menu-tabs">
-            <button class="tab active">🍽 Main</button>
-            <button class="tab">🍰 Dessert</button>
-            <button class="tab">🥂 Drinks</button>
+
+    <h1>Our Exquisite Menu</h1>
+    
+    <!-- Menu Categories -->
+    <div class="menu-categories">
+        <button class="category-btn active" onclick="showCategory('main')">
+            <img src="{{ url_for('static', filename='icons/main.png') }}" alt="Main">
+            Main
+        </button>
+        <button class="category-btn" onclick="showCategory('dessert')">
+            <img src="{{ url_for('static', filename='icons/desserts.png') }}" alt="Dessert">
+            Dessert
+        </button>
+        <button class="category-btn" onclick="showCategory('drinks')">
+            <img src="{{ url_for('static', filename='icons/drinks.png') }}" alt="Drinks">
+            Drinks
+        </button>
+    </div>
+
+    <!-- Main Dishes -->
+    <div class="menu-grid" id="main">
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/biryani.jpg') }}" alt="Grilled Beef">
+            <div class="menu-item-content">
+                <h2>Hyderabadi Biryani</h2>
+                <p>Meat, flavourfull Rice</p>
+            </div>
+            <div class="menu-item-price">$29</div>
         </div>
 
-        <div class="menu-grid">
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Grilled Beef with Potatoes</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/butter chicken.jpg') }}" alt="Chinese Pancakes">
+            <div class="menu-item-content">
+                <h2>Butter Chicken</h2>
+                <p>Chicken, gravy</p>
             </div>
+            <div class="menu-item-price">$29</div>
+        </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Savory Watercress Chinese Pancakes</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/mandi.jpg') }}" alt="Asian Pork">
+            <div class="menu-item-content">
+                <h2>Arabian Mandi</h2>
+                <p>Meat, juicy rice, served with stew, mayonaise and red chutney</p>
             </div>
+            <div class="menu-item-price">$29</div>
+        </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Fruit Vanilla Ice Cream</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/naan.jpg') }}" alt="Udon Noodles">
+            <div class="menu-item-content">
+                <h2>ButterGarlic Naan</h2>
+                <p>Bread served with a hint of garlic and butter</p>
             </div>
+            <div class="menu-item-price">$29</div>
+        </div>
+    </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Soup With Vegetables And Meat</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+    <!-- Desserts -->
+    <div class="menu-grid hidden" id="dessert">
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/ice-cream.jpg') }}" alt="Ice Cream">
+            <div class="menu-item-content">
+                <h2>Fruit Vanilla Ice Cream</h2>
+                <p>Fresh fruits, Vanilla ice cream, Honey</p>
             </div>
+            <div class="menu-item-price">$12</div>
+        </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Asian Hoisin Pork</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/chocolate-cake.jpg') }}" alt="Chocolate Cake">
+            <div class="menu-item-content">
+                <h2>Chocolate Lava Cake</h2>
+                <p>Dark chocolate, Vanilla ice cream</p>
             </div>
+            <div class="menu-item-price">$14</div>
+        </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Udon Noodles With Vegetables</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/tiramisu.jpg') }}" alt="Tiramisu">
+            <div class="menu-item-content">
+                <h2>Classic Tiramisu</h2>
+                <p>Coffee, Mascarpone, Cocoa</p>
             </div>
+            <div class="menu-item-price">$11</div>
+        </div>
+    </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Spicy Fried Rice & Bacon</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+    <!-- Drinks -->
+    <div class="menu-grid hidden" id="drinks">
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/cocktail.jpg') }}" alt="Signature Cocktail">
+            <div class="menu-item-content">
+                <h2>Signature Cocktail</h2>
+                <p>Premium spirits, Fresh fruits</p>
             </div>
+            <div class="menu-item-price">$15</div>
+        </div>
 
-            <div class="menu-item">
-                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
-                <div class="menu-info">
-                    <h3>Baked Lobster With A Garnish</h3>
-                    <p>Meat, Potatoes, Rice, Tomato</p>
-                </div>
-                <span class="price">$29</span>
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/wine.jpg') }}" alt="House Wine">
+            <div class="menu-item-content">
+                <h2>House Wine</h2>
+                <p>Red or White wine selection</p>
             </div>
+            <div class="menu-item-price">$12</div>
+        </div>
+
+        <div class="menu-item">
+            <img src="{{ url_for('static', filename='images/smoothie.jpg') }}" alt="Fresh Smoothie">
+            <div class="menu-item-content">
+                <h2>Fresh Fruit Smoothie</h2>
+                <p>Seasonal fruits, Yogurt, Honey</p>
+            </div>
+            <div class="menu-item-price">$8</div>
+
         </div>
     </div>
 </section>
+
+<script>
+function showCategory(category) {
+    // Hide all menu grids
+    document.querySelectorAll('.menu-grid').forEach(grid => {
+        grid.classList.add('hidden');
+    });
+    
+    // Show selected category
+    document.getElementById(category).classList.remove('hidden');
+    
+    // Update active button
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+}
+</script>
 {% endblock %}
