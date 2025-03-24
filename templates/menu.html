@@ -2,25 +2,85 @@
 
 {% block content %}
 <section class="menu fade-in">
-    <h1>Our Exquisite Menu</h1>
     <div class="menu-container">
-        <div class="menu-item">
-            <img src="{{ url_for('static', filename='images/truffle pasta.jpg') }}" alt="Dish 1">
-            <h2>Truffle Pasta</h2>
-            <p>Rich and creamy pasta infused with fresh truffles.</p>
-            <span class="price">AU$10</span>
+        <div class="menu-tabs">
+            <button class="tab active">🍽 Main</button>
+            <button class="tab">🍰 Dessert</button>
+            <button class="tab">🥂 Drinks</button>
         </div>
-        <div class="menu-item">
-            <img src="{{ url_for('static', filename='images/wagyu steak.jpg') }}" alt="Dish 2">
-            <h2>Wagyu Steak</h2>
-            <p>Premium Wagyu beef, grilled to perfection.</p>
-            <span class="price">AU$25</span>
-        </div>
-        <div class="menu-item">
-            <img src="{{ url_for('static', filename='images/choco lava cake.jpg') }}" alt="Dish 3">
-            <h2>Chocolate Lava Cake</h2>
-            <p>Decadent chocolate dessert with a molten core.</p>
-            <span class="price">AU$6</span>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Grilled Beef with Potatoes</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Savory Watercress Chinese Pancakes</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Fruit Vanilla Ice Cream</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Soup With Vegetables And Meat</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Asian Hoisin Pork</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Udon Noodles With Vegetables</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Spicy Fried Rice & Bacon</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
+
+            <div class="menu-item">
+                <img src="{{ url_for('static', filename='images/meat.jpg') }}" alt="Elegant Restaurant Interior" onclick="openLightbox(this)">
+                <div class="menu-info">
+                    <h3>Baked Lobster With A Garnish</h3>
+                    <p>Meat, Potatoes, Rice, Tomato</p>
+                </div>
+                <span class="price">$29</span>
+            </div>
         </div>
     </div>
 </section>
