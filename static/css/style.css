@@ -545,7 +545,7 @@ header {
     top: 0;
     z-index: 1000;
     height: 80px;
-    filter: brightness(1.1) contrast(1.1); /* Enhance image vibrancy */
+    filter: brightness(1.3) contrast(1.2) saturate(1.2); /* Enhanced image vibrancy */
 }
 
 /* Add an overlay to make text more visible */
@@ -556,7 +556,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)); /* Lighter, gradient overlay */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.15), transparent); /* Much lighter gradient */
     z-index: 1;
 }
 
