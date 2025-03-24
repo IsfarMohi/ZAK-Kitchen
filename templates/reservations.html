@@ -1,28 +1,58 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="reservation fade-in">
-    <h1>Book a Table</h1>
-    <form action="{{ url_for('make_reservation') }}" method="POST">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="date">Select Date</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="time">Select Time</label>
-        <input type="time" id="time" name="time" required>
-
-        <label for="guests">Number of Guests</label>
-        <input type="number" id="guests" name="guests" min="1" max="20" required>
-
-        <button type="submit">Reserve Now</button>
-    </form>
+<section class="reservation">
+    <div class="reservation-container">
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='images/restaurant-interior.jpg') }}" alt="Restaurant Interior">
+        </div>
+        <div class="booking-section">
+            <div class="booking-header">
+                <span class="cursive-text">Book a Table</span>
+                <h1>Make Reservation</h1>
+            </div>
+            <form class="elegant-form" action="{{ url_for('make_reservation') }}" method="POST">
+                <div class="form-group-row">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div>
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div>
+                        <label for="guests">Person</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select Person</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6+ People</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="reservation-btn">Make a Reservation</button>
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
