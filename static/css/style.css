@@ -34,7 +34,76 @@ button {
     border: none;
     cursor: pointer;
 }
-.menu {
+.menu-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.tab.active {
+    background-color: #ffc107;
+    color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.menu-item {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.menu-info h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.menu-info p {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}
+ .menu {
     background-image: url('../images/bg1.jpg');
         background-size: cover;
     background-position: center;
@@ -44,7 +113,7 @@ button {
     padding: 50px;
 }
 
-.menu h1 {
+/* .menu h1 {
     font-size: 3em;
     color: gold;
     margin-bottom: 20px;
@@ -88,7 +157,7 @@ button {
 
 .menu-item:hover {
     transform: scale(1.05);
-}
+} */ 
 .reservation {
     text-align: center;
     padding: 50px;
