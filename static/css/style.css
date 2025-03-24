@@ -148,6 +148,7 @@ button {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+
 @media (max-width: 768px) {
     .menu-categories {
         flex-wrap: wrap;
@@ -161,6 +162,7 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
 .reservation {
     background-image: url('../images/reservations\ bg.jpg');
     background-size: cover;
