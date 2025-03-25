@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/greblackbg.jpg');
+    background-image: url('../images/greblackbg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -537,39 +537,28 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: url('../images/pozter.jpeg') center/cover;
-    background-position: center 25%;
+    background: rgba(260, 187, 0, 0.8);
     padding: 14px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(255, 180, 0, 0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 80px;
-    filter: brightness(1.3) contrast(1.2) saturate(1.2); /* Enhanced image vibrancy */
-}
-
-/* Add an overlay to make text more visible */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.15), transparent); /* Much lighter gradient */
-    z-index: 1;
 }
 
 .logo {
     display: flex;
     align-items: center;
     padding: 10px;
-    z-index: 2;
 }
 
-nav {
-    position: relative;
-    z-index: 2;
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 nav ul {
@@ -583,27 +572,23 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-size: 1.2em;
     transition: 0.3s;
-    font-weight: 600; /* Made text bolder */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Added text shadow for better visibility */
 }
 
 nav ul li a:hover {
-    color: gold;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Added glow effect on hover */
+    color: white;
 }
 
+/* Mobile Navigation */
 .menu-icon {
     display: none;
     font-size: 2em;
-    color: white; /* Changed to white */
+    color: black;
     cursor: pointer;
     user-select: none;
-    position: relative;
-    z-index: 2;
 }
 
 /* Footer */
@@ -674,7 +659,6 @@ footer {
     width: 30px;
     margin: 0 10px;
     transition: transform 0.3s;
-    filter: brightness(0) invert(1); /* This will make the icons white */
 }
 
 .social-icons img:hover {
