@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-color: #000000; /* Fallback color if image fails to load */
     color: rgb(249, 249, 244);
     font-family: Brixton;
