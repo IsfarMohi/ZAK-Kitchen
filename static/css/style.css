@@ -659,6 +659,7 @@ footer {
     width: 30px;
     margin: 0 10px;
     transition: transform 0.3s;
+    filter: brightness(0) saturate(100%) invert(1);
 }
 
 .social-icons img:hover {
