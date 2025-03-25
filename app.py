@@ -31,6 +31,8 @@ def make_reservation():
             'guests': guests
         })
 
+        print(reservations_data) 
+
         return "<h1>Reservation Confirmed!</h1><p>We have received your booking.</p><a href='/'>Back to Home</a>"
     
     return render_template('reservations.html')
@@ -51,6 +53,17 @@ def contact():
         message = request.form['message']
         print(f"New Message from {name} ({email}): {message}")
     return render_template('contact.html')
+
+# @app.route("/test-db")
+# def test_db():
+#     conn = get_db_connection()
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT * FROM reservations;")  # Adjust table name
+#     data = cursor.fetchall()
+#     cursor.close()
+#     conn.close()
+#     return str(data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

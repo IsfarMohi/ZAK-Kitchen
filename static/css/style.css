@@ -617,6 +617,7 @@ footer {
     flex: 1;
     max-width: 350px;
     padding: 0 15px;
+    text-align: center;
 }
 
 .footer-section h2 {
