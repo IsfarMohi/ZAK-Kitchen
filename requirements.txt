@@ -3,3 +3,4 @@ google-auth-httplib2==0.1.0
 google-api-python-client==2.86.0 
 flask
 flask-cors
+mysql-connector-python
