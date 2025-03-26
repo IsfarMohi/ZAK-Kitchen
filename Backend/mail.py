@@ -10,7 +10,6 @@ import base64
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 def get_gmail_service():
-    """Gets an authorized Gmail API service instance."""
     creds = None
     
     # The file token.pickle stores the user's access and refresh tokens, and is
@@ -36,7 +35,6 @@ def get_gmail_service():
     return build('gmail', 'v1', credentials=creds)
 
 def create_message(sender, to, subject, message_text):
-    """Create a message for an email."""
     message = MIMEText(message_text)
     message['to'] = to
     message['from'] = sender
@@ -44,7 +42,6 @@ def create_message(sender, to, subject, message_text):
     return {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode()}
 
 def send_message(service, user_id, message):
-    """Send an email message."""
     try:
         message = service.users().messages().send(userId=user_id, body=message).execute()
         print(f'Message Id: {message["id"]}')
@@ -54,16 +51,13 @@ def send_message(service, user_id, message):
         return None
 
 def main():
-    # Get Gmail API service
     service = get_gmail_service()
     
-    # Example usage
-    sender = "majindevil164@gmail.com"  # Replace with your Gmail address
-    to = "isfarmohi.im@gmail.com"      # Replace with recipient's email
+    sender = "majindevil164@gmail.com" 
+    to = "isfarmohi.im@gmail.com"     
     subject = "Test Email from Gmail API"
     message_text = "This is a test email sent using the Gmail API"
     
-    # Create and send the email
     message = create_message(sender, to, subject, message_text)
     send_message(service, "me", message)
 
