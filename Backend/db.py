@@ -25,6 +25,9 @@ def add_data(name,email, phone, date, time, guests):
         return f"Error: {response['error']}"
     
     return "Reservation added successfully!"
+
+def data_for_mail():
+    print("under Construction")
     
 
 
