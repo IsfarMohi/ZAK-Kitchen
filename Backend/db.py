@@ -1,36 +1,30 @@
-from flask import Flask, request, redirect
-import mysql.connector
+import os 
+from supabase import create_client
+from dotenv import load_dotenv
 
-app = Flask(__name__)
+load_dotenv()
 
-def get_db_connection():
-    return mysql.connector.connect(
-        host="your-username.mysql.pythonanywhere-services.com",
-        user="your-username",
-        password="your-password",
-        database="your-username$your-database-name"
-    )
+URL = os.getenv('URL')
+KEY = os.getenv('KEY')
 
-@app.route("/submit", methods=["POST"])
-def submit():
-    name = request.form["name"]
-    email = request.form["email"]
-    phone = request.form["phone"]
-    date = request.form["date"]
-    time = request.form["time"]
-    guests = request.form["guests"]
+reservations_data = []
+supabase = create_client(URL,KEY)
 
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO reservations (name, email, phone, date, time, guests) VALUES (%s, %s, %s, %s, %s, %s)",
-        (name, email, phone, date, time, guests)
-    )
-    conn.commit()
-    cursor.close()
-    conn.close()
+def add_data(name,email, phone, date, time, guests):
+    data = {
+        'name': name,
+        'email': email,
+        'phone': phone,
+        'date': date,
+        'time': time,
+        'guests': guests
+        }
+    
+    response = supabase.table("reservations").insert(data).execute()
+    if "error" in response and response["error"]:
+        return f"Error: {response['error']}"
+    
+    return "Reservation added successfully!"
+    
 
-    return "Reservation Successful!"
 
-if __name__ == "__main__":
-    app.run()
