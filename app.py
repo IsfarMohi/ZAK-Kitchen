@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 
+from Backend.db import add_data
+
 app = Flask(__name__)
 
 reservations_data = []
@@ -22,18 +24,9 @@ def make_reservation():
         time = request.form['time']
         guests = request.form['guests']
         
-        reservations_data.append({
-            'name': name,
-            'email': email,
-            'phone': phone,
-            'date': date,
-            'time': time,
-            'guests': guests
-        })
-
-        print(reservations_data) 
-
-        return "<h1>Reservation Confirmed!</h1><p>We have received your booking.</p><a href='/'>Back to Home</a>"
+        add_data(name, email, phone, date, time, guests)
+ 
+        return "<h1>Reservation Sent!</h1><p>We have received your booking.</p><a href='/'>Back to Home</a>"
     
     return render_template('reservations.html')
 
